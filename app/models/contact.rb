@@ -6,7 +6,7 @@ class Contact < MailForm::Base
 
   def headers
     {
-      :subject => "Contact Inquiry",
+      :subject => "Portfolio Contact",
       :to => Rails.application.secrets.email_user_name,
       :from => %(“#{name}” <#{email}>)
     }
