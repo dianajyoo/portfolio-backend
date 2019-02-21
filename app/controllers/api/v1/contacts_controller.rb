@@ -7,7 +7,8 @@ module Api
       end
 
       def create
-        @contact = Contact.new(params[:contact])
+        @contact = Contact.new(params[:contact][:data])
+        name = params[:contact][:data][:name]
         @contact.request = request
 
         if @contact.deliver
