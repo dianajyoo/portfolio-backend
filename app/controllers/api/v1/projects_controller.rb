@@ -2,9 +2,17 @@ module Api
   module V1
     class ProjectsController < ApplicationController
 
+      # /api/v1/projects
       def index
         @projects = Project.all
-        render json: @projects
+        @photos = Photo.all
+
+        @all = @projects.map do |project|
+          @photos.map do |photo|
+            {id: project.id, name: project.name, description: project.description, tools: project.tools, photoUrl: photo.source}
+          end
+        end
+        render json: @all.flatten
       end
 
       def show

@@ -2,6 +2,7 @@ module Api
   module V1
     class PhotosController < ApplicationController
 
+      # /api/v1/photos
       def index
         @photos = Photo.all
         render json: @photos
