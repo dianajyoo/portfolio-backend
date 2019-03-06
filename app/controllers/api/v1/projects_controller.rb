@@ -5,14 +5,11 @@ module Api
       # /api/v1/projects
       def index
         @projects = Project.all
-        @photos = Photo.all
-
         @all = @projects.map do |project|
-          @photos.map do |photo|
-            {id: project.id, name: project.name, description: project.description, tools: project.tools, photoUrl: photo.source}
-          end
+          {id: project.id, name: project.name, description: project.description, tools: project.tools, photos: project.photos}
         end
-        render json: @all.flatten
+          
+        render json: @all
       end
 
       def show
