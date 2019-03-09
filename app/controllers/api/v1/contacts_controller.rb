@@ -14,7 +14,7 @@ module Api
         if @contact.deliver
           render json: {message: "Successfully sent!"}
         else
-          render json: {message: "Error occurred. Please try again!"}
+          render json: {message: "Error"}
         end
       end
 

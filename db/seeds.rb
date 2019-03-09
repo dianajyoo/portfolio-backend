@@ -15,7 +15,7 @@ emotone = Project.create(name: "emoTone", description: "Detects emotional tones 
 
 pmInsights = Project.create(name: "PM Insights", description: "Analyzes and provides insight on your sleep habits", tools: ["React", "Redux", "CSS", "Ruby on Rails"])
 
-# Photo.create(source: "", project_id: myBrews.id)
+Photo.create(source: "https://i.imgur.com/Z3LMiWE.png", project_id: myBrews.id)
 
 Photo.create(source: "https://i.imgur.com/Li48iSC.png", project_id: emotone.id)
 Photo.create(source: "https://i.imgur.com/I90BHjb.png", project_id: emotone.id)
