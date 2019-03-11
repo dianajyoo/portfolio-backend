@@ -6,7 +6,7 @@ module Api
       def index
         @projects = Project.all
         @all = @projects.map do |project|
-          {id: project.id, name: project.name, description: project.description, tools: project.tools, photos: project.photos}
+          {id: project.id, name: project.name, description: project.description, tools: project.tools, gif: project.gif, summary: project.summary, photos: project.photos}
         end
           
         render json: @all
@@ -40,7 +40,7 @@ module Api
       private
 
       def project_params
-        params.require(:project).permit(:id, :name, :description, :tools)
+        params.require(:project).permit(:id, :name, :description, :tools, :gif, :summary)
       end
 
     end
